@@ -17,7 +17,7 @@ $bot_username = 'coinsample_bot';
 
 // Define all IDs of admin users in this array (leave as empty array if not used)
 $admin_users = [
-    @narendragorane1,
+    621627834,
 ];
 
 // Define all paths for your custom commands in this array (leave as empty array if not used)
@@ -46,9 +46,9 @@ try {
     $telegram->enableMySql($mysql_credentials);
 
     // Logging (Error, Debug and Raw Updates)
-    Longman\TelegramBot\TelegramLog::initErrorLog(__DIR__ . "/{$bot_username}_error.log");
-    Longman\TelegramBot\TelegramLog::initDebugLog(__DIR__ . "/{$bot_username}_debug.log");
-    Longman\TelegramBot\TelegramLog::initUpdateLog(__DIR__ . "/{$bot_username}_update.log");
+    //Longman\TelegramBot\TelegramLog::initErrorLog(__DIR__ . "/{$bot_username}_error.log");
+    ///Longman\TelegramBot\TelegramLog::initDebugLog(__DIR__ . "/{$bot_username}_debug.log");
+    //Longman\TelegramBot\TelegramLog::initUpdateLog(__DIR__ . "/{$bot_username}_update.log");
 
     // If you are using a custom Monolog instance for logging, use this instead of the above
     //Longman\TelegramBot\TelegramLog::initialize($your_external_monolog_instance);
