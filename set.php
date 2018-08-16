@@ -13,7 +13,7 @@ $bot_api_key  = '690920531:AAF4OHPP-JK4qCWhli7EC2M3v8BhpMdsJFA';
 $bot_username = 'coinsample_bot';
 
 // Define the URL to your hook.php file
-$hook_url     = '/hook.php';
+$hook_url     = 'https://coinchats.herokuapp.com/hook.php';
 
 try {
     // Create Telegram API object
