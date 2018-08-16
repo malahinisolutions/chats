@@ -17,7 +17,7 @@ $bot_username = 'coinsample_bot';
 
 // Define all IDs of admin users in this array (leave as empty array if not used)
 $admin_users = [
-    123,
+    @narendragorane1,
 ];
 
 // Define all paths for your custom commands in this array (leave as empty array if not used)
