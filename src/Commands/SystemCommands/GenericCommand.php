@@ -47,6 +47,16 @@ class GenericCommand extends SystemCommand
         //$command = $message->getCommand();
         //$text = trim($message->getText(true));
 
-        return parent::execute();
+//        return parent::execute();
+$message = $this->getMessage();            // Get Message object
+
+        $chat_id = $message->getChat()->getId();   // Get the current Chat ID
+
+        $data = [                                  // Set up the new message data
+            'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+            'text'    => 'Please Contact support for more deatils', // Set message to send
+        ];
+
+        return Request::sendMessage($data);
     }
 }

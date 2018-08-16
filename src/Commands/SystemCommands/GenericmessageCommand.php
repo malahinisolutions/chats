@@ -69,6 +69,16 @@ class GenericmessageCommand extends SystemCommand
             return $this->telegram->executeCommand($command);
         }
 
-        return Request::emptyResponse();
+//        return Request::emptyResponse();
+$message = $this->getMessage();            // Get Message object
+
+        $chat_id = $message->getChat()->getId();   // Get the current Chat ID
+
+        $data = [                                  // Set up the new message data
+            'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+            'text'    => 'Please Contact support for more deatils', // Set message to send
+        ];
+
+        return Request::sendMessage($data);
     }
 }
