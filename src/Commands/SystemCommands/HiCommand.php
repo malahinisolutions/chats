@@ -5,11 +5,11 @@ namespace Longman\TelegramBot\Commands\SystemCommands;
 use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Request;
 
-class TestCommand extends SystemCommand
+class HiCommand extends SystemCommand
 {
-    protected $name = 'test';                      // Your command's name
-    protected $description = 'A command for test'; // Your command description
-    protected $usage = 'test';                    // Usage of your command
+    protected $name = 'hi';                      // Your command's name
+    protected $description = 'Hi there!'; // Your command description
+    protected $usage = '/hi';                    // Usage of your command
     protected $version = '1.0.0';                  // Version of your command
 
     public function execute()
@@ -20,10 +20,9 @@ class TestCommand extends SystemCommand
 
         $data = [                                  // Set up the new message data
             'chat_id' => $chat_id,                 // Set Chat ID to send the message to
-            'text'    => 'This is just a Test...', // Set message to send
+            'text'    => 'Hi there!' . PHP_EOL . 'Welcome to cointest. How may i help you today?', // Set message to send
         ];
 
         return Request::sendMessage($data);        // Send message!
     }
 }
-
