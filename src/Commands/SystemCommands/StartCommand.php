@@ -50,6 +50,17 @@ class StartCommand extends SystemCommand
         //$chat_id = $message->getChat()->getId();
         //$user_id = $message->getFrom()->getId();
 
-        return parent::execute();
+//        return parent::execute();
+        $message = $this->getMessage();
+
+        $chat_id = $message->getChat()->getId();
+        $text    = 'Hi there!' . PHP_EOL . 'Type /help to see all commands!';
+
+        $data = [
+            'chat_id' => $chat_id,
+            'text'    => $text,
+        ];
+
+        return Request::sendMessage($data);
     }
 }
