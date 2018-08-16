@@ -54,7 +54,7 @@ $message = $this->getMessage();            // Get Message object
 
         $data = [                                  // Set up the new message data
             'chat_id' => $chat_id,                 // Set Chat ID to send the message to
-            'text'    => 'Please Contact support for more deatils', // Set message to send
+'text'    => 'Thank you for contacting cointest support.'.PHP_EOL.'Please email us your query on support@example.com and we will get back to you.'.PHP_EOL.'Thank you.', // Set message to send
         ];
 
         return Request::sendMessage($data);
