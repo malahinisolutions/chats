@@ -1,11 +1,11 @@
 <?php
 
-namespace Longman\TelegramBot\Commands\UserCommands;
+namespace Longman\TelegramBot\Commands\SystemCommands;
 
-use Longman\TelegramBot\Commands\UserCommand;
+use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Request;
 
-class TestCommand extends UserCommand
+class TestCommand extends SystemCommand
 {
     protected $name = 'test';                      // Your command's name
     protected $description = 'A command for test'; // Your command description
@@ -26,3 +26,4 @@ class TestCommand extends UserCommand
         return Request::sendMessage($data);        // Send message!
     }
 }
+
