@@ -92,7 +92,7 @@ class GenericmessageCommand extends SystemCommand
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
               'text'    => "Please visit our website www.example.com and visit 'Buy' page and follow steps to purchase coins.", // Set message to send
           ];
-        }elseif(strtolower(trim($text))=='thank you' || strtolower(trim($text))=='thanks' || strtolower(trim($text))=='thank you very much'|| strtolower(trim($text))=='thank you so much')
+        }elseif(strtolower(trim($text))=='thank you' || strtolower(trim($text))=='thanks' || strtolower(trim($text))=='thank you very much'|| strtolower(trim($text))=='thank you so much'|| strtolower(trim($text))=='thank you?')
         {
           $data = [                                  // Set up the new message data
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
@@ -104,7 +104,8 @@ class GenericmessageCommand extends SystemCommand
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
               'text'    => "I am fine, Thank you.How may i help you today?", // Set message to send
           ];
-        }elseif(strtolower(trim($text))=='download wallet' || strtolower(trim($text))=='wallet download'|| strtolower(trim($text))=='how to download wallet')
+        }elseif(strtolower(trim($text))=='download wallet' || strtolower(trim($text))=='wallet download'|| strtolower(trim($text))=='how to download wallet'|| strtolower(trim($text))=='can you help me download the wallet?'|| strtolower(trim($text))=='can you help me download the wallet'|| strtolower(trim($text))=='can you help me download wallet?'|| strtolower(trim($text))=='can you help me download wallet'
+        || strtolower(trim($text))=='help me to download the wallet'|| strtolower(trim($text))=='help me to download wallet')
         {
           $data = [                                  // Set up the new message data
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
