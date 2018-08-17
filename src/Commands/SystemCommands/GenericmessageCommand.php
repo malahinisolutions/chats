@@ -85,13 +85,14 @@ class GenericmessageCommand extends SystemCommand
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
               'text'    => 'Hello there!' . PHP_EOL . 'Welcome to cointest. How may i help you today?', // Set message to send
           ];
-        }elseif(strtolower(trim($text))=='i want to buy coin' || strtolower(trim($text))=='buy coin')
+        }elseif(strtolower(trim($text))=='i want to buy coin' || strtolower(trim($text))=='buy coin' || strtolower(trim($text))=='buy coins' || strtolower(trim($text))=='i want to buy coins' || strtolower(trim($text))=='coin buy' || strtolower(trim($text))=='coins buy' || strtolower(trim($text))=='how to buy coin'
+        || strtolower(trim($text))=='how to buy coin?' || strtolower(trim($text))=='how to buy coins'|| strtolower(trim($text))=='how to buy coins?'|| strtolower(trim($text))=='where to buy coin'|| strtolower(trim($text))=='where to buy coin?'|| strtolower(trim($text))=='where to buy coins'|| strtolower(trim($text))=='where to buy coins?')
         {
           $data = [                                  // Set up the new message data
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
               'text'    => "Please visit our website www.example.com and visit 'Buy' page and follow steps to purchase coins.", // Set message to send
           ];
-        }elseif(strtolower(trim($text))=='thank you' || strtolower(trim($text))=='thanks')
+        }elseif(strtolower(trim($text))=='thank you' || strtolower(trim($text))=='thanks' || strtolower(trim($text))=='thank you very much'|| strtolower(trim($text))=='thank you so much')
         {
           $data = [                                  // Set up the new message data
               'chat_id' => $chat_id,                 // Set Chat ID to send the message to
