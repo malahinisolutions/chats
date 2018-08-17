@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * This file is part of the TelegramBot package.
  *
@@ -122,4 +122,3 @@ class GenericmessageCommand extends SystemCommand
         //return Request::emptyResponse();
     }
 }
-
