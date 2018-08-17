@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * This file is part of the TelegramBot package.
  *
@@ -68,20 +68,58 @@ class GenericmessageCommand extends SystemCommand
         if ($conversation->exists() && ($command = $conversation->getCommand())) {
             return $this->telegram->executeCommand($command);
         }
-
-//        return Request::emptyResponse();
-$message = $this->getMessage();            // Get Message object
+        $message = $this->getMessage();            // Get Message object
 
         $chat_id = $message->getChat()->getId();   // Get the current Chat ID
 
         $text = trim($message->getText(true));
-        $data = [                                  // Set up the new message data
-            'chat_id' => $chat_id,                 // Set Chat ID to send the message to
-            //'text'    => 'Thank you for contacting cointest support.'.PHP_EOL.'Please email us your query on support@example.com and we will get back to you.'.PHP_EOL.'Thank you.', // Set message to send
-            'text'    => $text,
-        ];
+        if(strtolower(trim($text))=='hi')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => 'Hi there!' . PHP_EOL . 'Welcome to cointest. How may i help you today?', // Set message to send
+          ];
+        }elseif(strtolower(trim($text))=='hello')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => 'Hello there!' . PHP_EOL . 'Welcome to cointest. How may i help you today?', // Set message to send
+          ];
+        }elseif(strtolower(trim($text))=='i want to buy coin' || strtolower(trim($text))=='buy coin')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => "Please visit our website www.example.com and visit 'Buy' page and follow steps to purchase coins.", // Set message to send
+          ];
+        }elseif(strtolower(trim($text))=='thank you' || strtolower(trim($text))=='thanks')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => "It was a pleasure helping you today. Please visit www.example.com for more information. Have a nice day.", // Set message to send
+          ];
+        }elseif(strtolower(trim($text))=='how are you' || strtolower(trim($text))=='how are you?')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => "I am fine, Thank you.How may i help you today?", // Set message to send
+          ];
+        }elseif(strtolower(trim($text))=='download wallet' || strtolower(trim($text))=='wallet download')
+        {
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => 'To download the wallet, please visit www.example.com and follow instructions.', // Set message to send
+          ];
+        }else{
+          $data = [                                  // Set up the new message data
+              'chat_id' => $chat_id,                 // Set Chat ID to send the message to
+              'text'    => 'Thank you for contacting cointest support.'.PHP_EOL.'Please email us your query on support@example.com and we will get back to you.'.PHP_EOL.'Thank you.', // Set message to send
+          ];
+        }
+
 
 
         return Request::sendMessage($data);
+        //return Request::emptyResponse();
     }
 }
+
