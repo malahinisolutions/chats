@@ -19,8 +19,8 @@ class TestCommand extends SystemCommand
         $chat_id = $message->getChat()->getId();   // Get the current Chat ID
 
         $data = [                                  // Set up the new message data
-            'chat_id' => $chat_id,                 // Set Chat ID to send the message to
-            'text'    => 'This is just a Test...', // Set message to send
+            'chat_id' => '-236744087',                 // Set Chat ID to send the message to
+            'text'    => 'This is just a Test group message...', // Set message to send
         ];
 
         return Request::sendMessage($data);        // Send message!
