@@ -19,19 +19,26 @@ class TestCommand extends SystemCommand
         $chat_id = $message->getChat()->getId();   // Get the current Chat ID -251833595
 		
         $command_str = trim($message->getText(true));
-		
-        $data1 = [                                  // Set up the new message data
-            'chat_id' => '-251833595',                 // Set Chat ID to send the message to
+		$con=mysqli_connect("MYSQL5019.site4now.net","9bc590_chatbot","Password@abc123","db_9bc590_chatbot");
+$sql="SELECT id FROM `chat` WHERE `type`='group'";
+$result = $con->query($sql);
+$rows = array();
+while($row = $result->fetch_assoc()) {
+	$rows[] = $row;
+	}
+foreach($rows as $chatId) {
+	 
+	 $data = [                                   
+            'chat_id' => $chatId['id'],                 // Set Chat ID to send the message to
             'text'    => $command_str,//'This is just a Test group message...', // Set message to send
         ];
  
-         Request::sendMessage($data1);        // Send message!
-		$data = [                                  // Set up the new message data
-            'chat_id' => '-236744087',                 // Set Chat ID to send the message to
-            'text'    => $command_str,//'This is just a Test group message...', // Set message to send
-        ];
- 
-         Request::sendMessage($data);    
+         Request::sendMessage($data);        // Send message!
+}
+mysqli_free_result($result);
+mysqli_close($con);
+        
+		 
     }
 }
 
