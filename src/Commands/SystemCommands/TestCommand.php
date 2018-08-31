@@ -16,15 +16,22 @@ class TestCommand extends SystemCommand
     {
         $message = $this->getMessage();            // Get Message object
 
-        $chat_id = $message->getChat()->getId();   // Get the current Chat ID
+        $chat_id = $message->getChat()->getId();   // Get the current Chat ID -251833595
 		
         $command_str = trim($message->getText(true));
-        $data = [                                  // Set up the new message data
+		
+        $data1 = [                                  // Set up the new message data
+            'chat_id' => '-251833595',                 // Set Chat ID to send the message to
+            'text'    => $command_str,//'This is just a Test group message...', // Set message to send
+        ];
+ 
+         Request::sendMessage($data1);        // Send message!
+		$data = [                                  // Set up the new message data
             'chat_id' => '-236744087',                 // Set Chat ID to send the message to
             'text'    => $command_str,//'This is just a Test group message...', // Set message to send
         ];
  
-        return Request::sendMessage($data);        // Send message!
+        return Request::sendMessage($data);    
     }
 }
 
