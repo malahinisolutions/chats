@@ -31,7 +31,7 @@ class TestCommand extends SystemCommand
             'text'    => $command_str,//'This is just a Test group message...', // Set message to send
         ];
  
-        return Request::sendMessage($data);    
+         Request::sendMessage($data);    
     }
 }
 
